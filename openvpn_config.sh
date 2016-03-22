@@ -56,8 +56,8 @@ cat /etc/openvpn/easy-rsa/keys/server.crt | sed -e '/-----BEGIN CERTIFICATE-----
 
 # Create a server.conf file
 cat > /etc/openvpn/server.conf <<EOF
-port 1194
-proto udp
+port 443
+proto tcp
 dev tun
 ca /etc/openvpn/easy-rsa/keys/ca.crt
 cert /etc/openvpn/easy-rsa/keys/server.crt
@@ -110,8 +110,8 @@ cat>/etc/openvpn/easy-rsa/keys/dummy.onc<<EOF
                         "CompLZO": "true",
                         "Cipher": "BF-CBC",
                         "NsCertType": "server",
-                        "Port": 1194,
-                        "Proto": "udp",
+                        "Port": 443,
+                        "Proto": "tcp",
                         "Username": "$SHELL_USER",
                         "Password": "$SHELL_PASS",
                         "SaveCredentials": true,
